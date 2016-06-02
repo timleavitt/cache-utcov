@@ -37,6 +37,23 @@ It is known however that Caché has what it takes to perform the task:
 Those two elements and others can be used to perform a full unit test run and
 coverage report.
 
+## Entry points
+
+At the moment there are two entry points:
+
+* Collect all production and test classes and print them to the terminal:
+  ```
+  do ##class(utcov.Main).m3()
+  ```
+  This method collects classes from project "cache-tort-git" in namespace "USER" (you can change it in src/utcov/Main.cls)
+
+* Run unit tests with coverage
+  ```
+  do ##class(UnitTest.Main).Run()
+  ```
+  This method run unit tests from class `UnitTest.SampleUnitTest` class and collects coverage information from `UnitTest.SampleTestedClass`
+  You can see coverage information at `<cache server>:<cache port>/csp/<your namespace>/utcov.UI.SimpleResultViewer.cls`
+
 ## Help needed
 
 The code as it stands is still a proof of concept. Right now it consists of
